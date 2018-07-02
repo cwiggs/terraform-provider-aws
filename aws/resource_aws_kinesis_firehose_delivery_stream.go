@@ -286,7 +286,7 @@ func flattenFirehoseSplunkConfiguration(description *firehose.SplunkDestinationD
 		"hec_endpoint_type":          aws.StringValue(description.HECEndpointType),
 		"hec_endpoint":               aws.StringValue(description.HECEndpoint),
 		"hec_token":                  aws.StringValue(description.HECToken),
-		"processing_configuration":   flattenProcessingConfiguration(description.ProcessingConfiguration, ""),
+		"processing_configuration":   flattenProcessingConfiguration(description.ProcessingConfiguration, aws.StringValue(description.RoleARN)),
 		"s3_backup_mode":             aws.StringValue(description.S3BackupMode),
 	}
 
